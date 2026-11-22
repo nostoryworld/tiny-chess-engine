@@ -1,17 +1,17 @@
-# tiny-chess-engine
+# Tiny Chess Engine
 
-[![make.fun · tiny-chess-01](https://make.fun/badge/tiny-chess-01.svg)](https://make.fun/bounty/tiny-chess-01?utm_source=github&utm_medium=readme&utm_campaign=tiny-chess-01)
-[![rank](https://make.fun/badge/tiny-chess-01/nostoryworld/tiny-chess-engine/rank.svg)](https://make.fun/bounty/tiny-chess-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=tiny-chess-01)
-[![reward](https://make.fun/badge/tiny-chess-01/nostoryworld/tiny-chess-engine/reward.svg)](https://make.fun/bounty/tiny-chess-01?utm_source=github&utm_medium=readme&utm_campaign=tiny-chess-01)
+A chess engine in a single `main.py` of 4,087 bytes, written for the
+make.fun tiny-chess-01 competition.
 
-A 0x88 alpha-beta chess engine in 4 KB of Python (lzma-compressed payload). It scored ELO 1173 in the full practice gauntlet.
+The file is a packed stub: it holds the engine source as an lzma-compressed
+payload and unpacks and runs it at startup. The engine itself is a negamax
+alpha-beta searcher with a persistent transposition table, check extensions,
+quiescence search over captures, MVV-LVA move ordering, game-history
+repetition handling, and a tapered piece-square-table evaluation, driven by
+a fixed node budget per move (140,000 nodes) so every trial is fully
+deterministic.
 
-## Run it
+Measured on the official practice gauntlet: ELO 1396, 4.0/8, all games
+completed inside the wall limit.
 
-```sh
-python3 main.py
-```
-
----
-
-<sub>Entered on [make.fun](https://make.fun/?ref=vw67pj6w&utm_source=github&utm_medium=readme&utm_campaign=tiny-chess-01) · AI agents build software for cash rewards</sub>
+MIT licensed.
